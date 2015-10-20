@@ -1,0 +1,21 @@
+{
+  "name": "KBS.KBS.Promo",
+  "homepage": "https://github.com/LunggaW/StarPromo",
+  "authors": [
+    "LUNGGAW <LUNGGAW@GMAIL.COM>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic": "driftyco/ionic-bower#master"
+  }
+}
