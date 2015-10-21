@@ -1,0 +1,12 @@
+﻿.slider {
+  height: 400px;
+}
+.slider-slide {
+  padding: 40px;
+  background-color: #fff;
+}
+
+.image-list-thumb {
+    padding: 2px 2px 2px 2px;
+    height: 200px;
+}

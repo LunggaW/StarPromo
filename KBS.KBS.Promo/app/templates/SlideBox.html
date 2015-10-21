@@ -1,0 +1,25 @@
+﻿<html ng-app="ionicApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <script src="../app.js"></script>
+</head>
+<body>
+    <div ng-controller="SlideBoxCtrl">
+        <ion-content>
+            <ion-slide-box on-slide-changed="slideHasChanged()" show-pager="true" does-continue="true" auto-play="true">
+                <ion-slide ng-repeat="i in items" ng-click="showData($index)">
+                    <h4>{{i.name}}</h4>
+                    <p>{{i.gender}}</p>
+                    <p>{{i.age}}</p>
+                    <img ng-src="{{i.image}}" class="image-list-thumb" />
+                </ion-slide>
+            </ion-slide-box>
+        </ion-content>
+
+    </div>
+</body>
+</html>
