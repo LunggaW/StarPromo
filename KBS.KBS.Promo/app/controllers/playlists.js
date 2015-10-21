@@ -40,7 +40,7 @@
 
 var friends = [
   { name: 'John', age: 25, gender: 'boy', image:"images/908.png"},
-  { name: 'Jessie', age: 30, gender: 'girl' },
+  { name: 'Jessie', age: 30, gender: 'girl', image: "images/908.png" },
   { name: 'Johanna', age: 28, gender: 'girl' },
   { name: 'Joy', age: 15, gender: 'girl' },
   { name: 'Mary', age: 28, gender: 'girl' }
