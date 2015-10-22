@@ -116,6 +116,9 @@
     <Content Include="app\templates\menu.html" />
     <Content Include="app\templates\page2.html" />
     <Content Include="app\templates\playlists.html" />
+    <Content Include="app\templates\promo-categorydetaildetail.html" />
+    <Content Include="app\templates\promo-categorydetail.html" />
+    <Content Include="app\templates\promo-imagepopover.html" />
     <Content Include="app\templates\promo-popover.html" />
     <Content Include="app\templates\SlideBox.html" />
     <Content Include="bower.json" />

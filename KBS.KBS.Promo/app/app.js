@@ -59,6 +59,28 @@
         }
     })
 
+    .state('app.filter',
+    {
+        url: "/filter",
+        views: {
+            'menuContent': {
+                templateUrl: "app/templates/Filter.html",
+                controller: 'FilterCtrl'
+            }
+        }
+    })
+
+    .state('app.informasi',
+    {
+        url: "/informasi",
+        views: {
+            'menuContent': {
+                templateUrl: "app/templates/Informasi.html",
+                controller: 'InformasiCtrl'
+            }
+        }
+    })
+
 
     // if none of the above states are matched, use this as the fallback
     //$urlRouterProvider.otherwise('/main');
