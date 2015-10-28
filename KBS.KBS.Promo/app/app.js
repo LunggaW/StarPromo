@@ -14,21 +14,6 @@
 .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 
-    //.state('main', {
-    //    url: "/main",
-    //    templateUrl: "app/templates/main.html",
-    //    controller: 'MainCtrl'
-    //})
-
-    //.state('page2', {
-    //    url: "/page2",
-    //    templateUrl: "app/templates/page2.html",
-    //})
-
-
-
-
-
 
     .state('app', {
         url: "/app",
@@ -36,7 +21,7 @@
         templateUrl: "app/templates/menu.html",
         controller: 'AppCtrl'
     })
-
+    
 	.state('app.playlists',
     {
         url: "/playlists",
@@ -48,6 +33,46 @@
         }
     })
 
+        .state('app.signup', {
+            url: "/signup",
+            views: {
+                'menuContent': {
+                    templateUrl: "app/templates/signup.html",
+                    controller: 'SignUpCtrl'
+                }
+            }
+        })
+
+
+    .state('app.signin', {
+        url: "/signin",
+        views: {
+            'menuContent': {
+                templateUrl: "app/templates/signin.html",
+                controller: 'SignInCtrl'
+            }
+        }
+    })
+     
+    .state('app.zoom', {
+        url: "/zoom",
+        views: {
+            'menuContent': {
+                templateUrl: "app/templates/zoom.html",
+                //controller: 'ZoomCtrl'
+            }
+        }
+    })
+    .state('app.browse',
+        {
+            url: "/browse",
+            views: {
+                'menuContent': {
+                    templateUrl: "app/templates/browse.html",
+                    controller: 'BrowseCtrl'
+                }
+            }
+        })
     .state('app.slidebox',
     {
         url: "/slidebox",
@@ -59,13 +84,13 @@
         }
     })
 
-    .state('app.filter',
+    .state('app.search',
     {
-        url: "/filter",
+        url: "/search",
         views: {
             'menuContent': {
-                templateUrl: "app/templates/Filter.html",
-                controller: 'FilterCtrl'
+                templateUrl: "app/templates/search.html",
+                controller: 'SearchCtrl'
             }
         }
     })

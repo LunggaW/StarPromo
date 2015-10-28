@@ -16,6 +16,58 @@
     .controller('PlaylistCtrl', function($scope, $stateParams)
     {
     })
+    .controller('InformasiCtrl', function ($scope, $stateParams) {
+    })    
+    .controller('BrowseCtrl', function ($scope, $cordovaSms) {
+        $scope.sms = {
+            number: '08562062968',
+            message: 'This is some dummy text'
+        };
+
+        document.addEventListener("deviceready", function () {
+
+            var options = {
+                replaceLineBreaks: false, // true to replace \n by a new line, false by default
+                android: {
+                    intent: '' // send SMS with the native android SMS messaging
+                    //intent: '' // send SMS without open any other app
+                    //intent: 'INTENT' // send SMS inside a default SMS app
+                }
+            };
+
+            $scope.sendSMS = function () {
+
+                $cordovaSms
+                  .send('08562062968', 'This is some dummy text', options)
+                  .then(function () {
+                      alert('Success');
+                      // Success! SMS was sent
+                  }, function (error) {
+                      alert('Error');
+                      // An error occurred
+                  });
+            }
+        });
+    })
+    .controller('SearchCtrl', function ($scope, $stateParams) {
+    })
+    .controller('SignUpCtrl', function ($scope, $stateParams) {
+
+        $scope.submit = function (username) {
+
+            alert("Thanks " + username);
+
+        }
+
+    })
+    .controller('SignInCtrl', function($scope) {       
+        $scope.submit = function(username) {
+
+            alert("Thanks " + username);
+
+        }
+
+    })
     .controller('SlideBoxCtrl', function($scope, $ionicSlideBoxDelegate, $ionicModal)
     {
         var promocode;
