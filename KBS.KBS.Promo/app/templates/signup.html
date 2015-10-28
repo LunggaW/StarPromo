@@ -13,7 +13,7 @@
                         </label>
                         <label class="item item-input">
                             <span class="input-label">Username</span>
-                            <input type="text" name="username" ng-minlength="5" required>
+                            <input type="text" name="username" ng-model="username" ng-minlength="5" required>
                         </label>
                         <label class="item item-input">
                             <span class="input-label">Email</span>
@@ -21,19 +21,21 @@
                         </label>
                         <label class="item item-input">
                             <span class="input-label">No HP</span>
-                            <input type="number" name="nohp" ng-minlength="5" required>
+                            <input type="number" name="nohp" ng-model="data.nohp" ng-minlength="11" required>
                         </label>
                         <label class="item item-input">
                             <span class="input-label">Password</span>
-                            <input type="password" name="password" ng-minlength="6" required>
+                            <input type="password" name="password" ng-model="password" ng-minlength="6" required>
                         </label>
                     </div>
                     <div class="padding">
                         <p ng-show="SignUpForm.username.$error.required">* Username is required</p>
-                        <p ng-show="SignUpForm.username.$invalid && !myForm.username.$pristine">* Username must be an email address</p>
+                        <p ng-show="SignUpForm.username.$invalid && !SignUpForm.username.$pristine">* Username must be an email address</p>
                         <p ng-show="SignUpForm.username.$error.minlength">* Username must be longer than 5 characters</p>
                         <p ng-show="SignUpForm.password.$error.required">* Password is required</p>
                         <p ng-show="SignUpForm.password.$error.minlength">* Password must be longer than 6 characters</p>
+                        <p ng-show="SignUpForm.nohp.$error.required">* No Hp is required</p>
+                        <p ng-show="SignUpForm.nohp.$error.minlength">* No Hp must be longer than 11 characters</p>
                     </div>
                     <div class="padding">
                         <button class="button button-block button-positive" ng-click="submit(username)" ng-disabled="SignUpForm.$invalid">

@@ -113,6 +113,7 @@
     <Content Include="app\app.js" />
     <Content Include="app\controllers\playlists.js" />
     <Content Include="app\templates\browse.html" />
+    <Content Include="app\templates\forgot.html" />
     <Content Include="app\templates\informasi.html" />
     <Content Include="app\templates\about.html" />
     <Content Include="app\templates\search.html" />

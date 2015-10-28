@@ -1,9 +1,7 @@
 ﻿angular.module('ionicApp.controllers', [])
-    .controller('AppCtrl', function($scope)
-    {
+    .controller('AppCtrl', function ($scope) {
     })
-    .controller('PlaylistsCtrl', function($scope)
-    {
+    .controller('PlaylistsCtrl', function ($scope) {
         $scope.playlists = [
             { title: 'Reggae', id: 1 },
             { title: 'Chill', id: 2 },
@@ -13,11 +11,10 @@
             { title: 'Cowbell', id: 6 }
         ];
     })
-    .controller('PlaylistCtrl', function($scope, $stateParams)
-    {
+    .controller('PlaylistCtrl', function ($scope, $stateParams) {
     })
     .controller('InformasiCtrl', function ($scope, $stateParams) {
-    })    
+    })
     .controller('BrowseCtrl', function ($scope, $cordovaSms) {
         $scope.sms = {
             number: '08562062968',
@@ -51,7 +48,7 @@
     })
     .controller('SearchCtrl', function ($scope, $stateParams) {
     })
-    .controller('SignUpCtrl', function ($scope, $stateParams) {
+    .controller('SignUpCtrl', function ($scope) {
 
         $scope.submit = function (username) {
 
@@ -60,16 +57,46 @@
         }
 
     })
-    .controller('SignInCtrl', function($scope) {       
-        $scope.submit = function(username) {
+    .controller('SignInCtrl', function ($scope, $ionicModal) {
+        $scope.signup = friends;
+        $scope.submit = function (username) {
+            if (username == "Sign Up") {
+                alert("Sign Up " + username);
+                $scope.showModal('app/templates/signup.html');
+            }
+            else {
+                alert("Log In " + username);
+            }
+            $scope.showModal = function (templateUrl) {
 
-            alert("Thanks " + username);
+
+                $ionicModal.fromTemplateUrl(templateUrl,
+                    {
+                        scope: $scope,
+                        //           animation: 'slide-in-up'
+                    }
+                ).then(function (modal) {
+                    $scope.modal = modal;
+                    $scope.modal.show();
+                }
+                );
+
+                // Close the modal
+                $scope.closeModal = function () {
+                    $scope.modal.hide();
+                    $scope.modal.remove();
+                };
+            }
 
         }
+        //$scope.submit = function () {
+        //    alert("Thanks signup ");
+        //    console.log("Button was pressed!");
+        //         $state.go('app/templates/search.html');
+        //     };
 
     })
-    .controller('SlideBoxCtrl', function($scope, $ionicSlideBoxDelegate, $ionicModal)
-    {
+    .controller('SlideBoxCtrl', function ($scope, $ionicSlideBoxDelegate, $ionicModal) {
         var promocode;
         var imageUrl;
         var barcode;
@@ -78,14 +105,12 @@
         $scope.promoCategory = friends;
         $scope.promoCategoryDetail = friends;
 
-        $scope.slideHasChanged = function()
-        {
+        $scope.slideHasChanged = function () {
             //$scope.items.push({ name: 'John', age: 25, gender: 'boy' });
             $ionicSlideBoxDelegate.update();
         };
 
-        $scope.showDataBest = function(index)
-        {
+        $scope.showDataBest = function (index) {
             //$scope.activeSlide = index;
             promocode = $scope.promoBest[index].promocode;
             imageUrl = $scope.promoBest[index].image;
@@ -94,15 +119,14 @@
         }
 
 
-//$scope.onTapBest = function (index)
+        //$scope.onTapBest = function (index)
         //{
         //    //$scope.activeSlide = index;
         //    imageUrl = $scope.promoBest[index].image;
         //    $scope.showModalImage('app/templates/promo-imagepopover.html');
         //}
 
-        $scope.showDataCategory = function(index)
-        {
+        $scope.showDataCategory = function (index) {
             //$scope.activeSlide = index;
             promocode = $scope.promoCategory[index].promocode;
             imageUrl = $scope.promoCategory[index].image;
@@ -111,16 +135,14 @@
         }
 
 
-        $scope.promoCategoryDetailShowData = function(index)
-        {
+        $scope.promoCategoryDetailShowData = function (index) {
             //$scope.activeSlide = index;
             promocode = $scope.promoCategoryDetail[index].promocode;
             imageUrl = $scope.promoCategoryDetail[index].image;
             $scope.showModal('app/templates/promo-categorydetaildetail.html');
         }
 
-        $scope.showModal = function(templateUrl)
-        {
+        $scope.showModal = function (templateUrl) {
             $scope.promo = {
                 promocode: promocode,
                 imageUrl: imageUrl
@@ -132,25 +154,19 @@
                     scope: $scope,
                     animation: 'slide-in-up'
                 }
-            ).then(function(modal)
-                {
-                    $scope.modal = modal;
-                    $scope.modal.show();
-                }
+            ).then(function (modal) {
+                $scope.modal = modal;
+                $scope.modal.show();
+            }
             );
 
             // Close the modal
-            $scope.closeModal = function()
-            {
+            $scope.closeModal = function () {
                 $scope.modal.hide();
                 $scope.modal.remove();
             };
         }
     });
-
-
-
-
 
 var friends = [
   { name: 'John', age: 25, gender: 'boy', image:"images/908.png", promocode:'Matahari1', barcode:'Matahari1'},
